@@ -47,6 +47,22 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
     <p>
-        <a href="https://www.baokim.vn/payment/product/version11?business=hakai.prince%40gmail.com&id=&order_description=&product_name=tour&product_price=5000000&product_quantity=2&total_amount=10000000&url_cancel=&url_detail=&url_success="><img src="\advanced\frontend\web\uploads\thanhtoan-l.png" alt="Thanh toán an toàn với Bảo Kim !" border="0" title="Thanh toán trực tuyến an toàn dùng tài khoản Ngân hàng (VietcomBank, TechcomBank, Đông Á, VietinBank, Quân Đội, VIB, SHB,... và thẻ Quốc tế (Visa, Master Card...) qua Cổng thanh toán trực tuyến BảoKim.vn" ></a>
+        <a
+            href=
+                "https://www.baokim.vn/payment/product/version11?
+                    business=hakai.prince%40gmail.com&
+                    id=&order_description=&
+                    product_name=tour&
+                    product_price=5000000&
+                    product_quantity=2
+                    &total_amount=<?php echo $model->TONGTIEN ?>&
+                    url_cancel=http://localhost:1702/advanced/frontend/web/index.php?r=site%2Ftour&
+                    url_detail=&
+                    url_success=http://localhost:1702/advanced/frontend/web/">
+            <img
+                src="\advanced\frontend\web\uploads\thanhtoan-l.png"
+                alt="Thanh toán an toàn với Bảo Kim !" border="0"
+                title="Thanh toán trực tuyến an toàn dùng tài khoản Ngân hàng (VietcomBank, TechcomBank, Đông Á, VietinBank, Quân Đội, VIB, SHB,... và thẻ Quốc tế (Visa, Master Card...) qua Cổng thanh toán trực tuyến BảoKim.vn" >
+        </a>
     </p>
 </div>

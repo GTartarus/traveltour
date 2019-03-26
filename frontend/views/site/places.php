@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php echo $item->DIACHI;?>
 
                 <p>
-                    <?php echo Html::a('Xem thêm &raquo;',['/diadiem/view1','MSDD'=>$item->MST],['class'=>'btn btn-info']);?>
+                    <?php echo Html::a('Xem thêm &raquo;',['/diadiem/view1','MADD'=>$item->MADD],['class'=>'btn btn-info']);?>
                 </p>
             </div>
         <?php endforeach;?>

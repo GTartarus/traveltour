@@ -3,8 +3,6 @@
 /* @var $this yii\web\View */
 use frontend\models\TOUR\Tour;
 use yii\helpers\Html;
-use frontend\models\DDDL\Khachsan;
-use frontend\models\DDDL\Diadiem;
 $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
@@ -128,7 +126,7 @@ $this->title = 'My Yii Application';
 									<div class="col-md-7 heading-section text-center ftco-animate">
 										<h2 class="mb-4">Most Famous Destinations</h2>
 									</div>
-								</div>    		
+								</div>
     		<div class="row">
 				<?php $Tour=Tour::find()->all(); ?>
 					<?php foreach($Tour as $item) :?>
@@ -150,10 +148,11 @@ $this->title = 'My Yii Application';
     							<i class="icon-star-o"></i>
     							<span>8 Rating</span>
     						</p>
-    						<p>Far far away, behind the word mountains, far from the countries</p>
+                <p class="days"><span><?php echo $item->NGAYBD?></span></p>
+								<p class="days"><span><?php echo $item->NGAYKT?></span></p>
     						<hr>
     						<p class="bottom-area d-flex">
-    							<span><i class="icon-map-o"></i> <?php echo $item->MALOAI?></span> 
+
     							<span class="ml-auto"><?php echo Html::a('Xem thêm &raquo;',['/tour/view1','MSTOUR'=>$item->MSTOUR],['class'=>'btn btn-info']);?></span>
     						</p>
     					</div>
@@ -164,7 +163,7 @@ $this->title = 'My Yii Application';
     	</div>
     </section>
 
-		
+
 
     <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(common/images/bg_1.jpg);" data-stellar-background-ratio="0.5">
     	<div class="container">
@@ -212,41 +211,179 @@ $this->title = 'My Yii Application';
 
     <section class="ftco-section">
     	<div class="container">
-								<div class="row justify-content-center mb-5 pb-3">
-									<div class="col-md-7 heading-section text-center ftco-animate">
-										<h2 class="mb-4">Popular Hotels</h2>
-									</div>
-								</div>    		
+				<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4"><strong>Popular</strong> Hotels</h2>
+          </div>
+        </div>
+    	</div>
+    	<div class="container-fluid">
     		<div class="row">
-				<?php $Khachsan=Khachsan::find()->all(); ?>
-					<?php foreach($Khachsan as $item) :?>
-    			<div class="col-md-6 col-lg-3 ftco-animate">
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
     				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(common/images/hotel-1.jpg);">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-link"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">New Orleans, Hotel</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price per-price">$40<br><small>/night</small></span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> Miami, Fl</span>
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination d-md-flex flex-column-reverse">
     					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(common/images/hotel-2.jpg);">
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-link"></span>
     						</div>
     					</a>
     					<div class="text p-3">
-    						<h3><?php echo $item->TENKS ?></h3>
-    						<p class="rate">
-    							<i class="icon-star"></i>
-    							<i class="icon-star"></i>
-    							<i class="icon-star"></i>
-    							<i class="icon-star"></i>
-    							<i class="icon-star-o"></i>
-    							<span>8 Rating</span>
-    						</p>
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">New Orleans, Hotel</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price per-price">$40<br><small>/night</small></span>
+    							</div>
+    						</div>
     						<p>Far far away, behind the word mountains, far from the countries</p>
     						<hr>
     						<p class="bottom-area d-flex">
-    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
-    							<span class="ml-auto"><?php echo Html::a('Xem thêm &raquo;',['/khachsan/view1','MSKS'=>$item->MSKS],['class'=>'btn btn-info']);?></span>
+    							<span><i class="icon-map-o"></i> Miami, Fl</span>
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
     						</p>
     					</div>
     				</div>
     			</div>
-					<?php endforeach ;?>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(common/images/hotel-3.jpg);">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-link"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">New Orleans, Hotel</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price per-price">$40<br><small>/night</small></span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> Miami, Fl</span>
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination d-md-flex flex-column-reverse">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(common/images/hotel-4.jpg);">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-link"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">New Orleans, Hotel</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price per-price">$40<br><small>/night</small></span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> Miami, Fl</span>
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(common/images/hotel-5.jpg);">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-link"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">New Orleans, Hotel</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						<div class="two">
+	    							<span class="price per-price">$40<br><small>/night</small></span>
+    							</div>
+    						</div>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> Miami, Fl</span>
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
     		</div>
     	</div>
     </section>
@@ -340,14 +477,12 @@ $this->title = 'My Yii Application';
 
     <section class="ftco-section">
     	<div class="container">
-								<div class="row justify-content-center mb-5 pb-3">
-									<div class="col-md-7 heading-section text-center ftco-animate">
-										<h2 class="mb-4">Wonderful Places</h2>
-									</div>
-								</div>    		
+				<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Recommended Restaurants</h2>
+          </div>
+        </div>
     		<div class="row">
-				<?php $Diadiem=Diadiem::find()->all(); ?>
-					<?php foreach($Diadiem as $item) :?>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="destination">
     					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(common/images/restaurant-1.jpg);">
@@ -356,7 +491,7 @@ $this->title = 'My Yii Application';
     						</div>
     					</a>
     					<div class="text p-3">
-    						<h3><?php echo $item->TENDD ?></h3>
+    						<h3><a href="#">Luxury Restaurant</a></h3>
     						<p class="rate">
     							<i class="icon-star"></i>
     							<i class="icon-star"></i>
@@ -368,13 +503,90 @@ $this->title = 'My Yii Application';
     						<p>Far far away, behind the word mountains, far from the countries</p>
     						<hr>
     						<p class="bottom-area d-flex">
-    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
-    							<span class="ml-auto"><?php echo Html::a('Xem thêm &raquo;',['/diadiem/view1','MADD'=>$item->MADD],['class'=>'btn btn-info']);?></span>
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span>
+    							<span class="ml-auto"><a href="#">Discover</a></span>
     						</p>
     					</div>
     				</div>
     			</div>
-					<?php endforeach ;?>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="destination d-md-flex flex-column-reverse">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(common/images/restaurant-2.jpg);">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-link"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<h3><a href="#">Luxury Restaurant</a></h3>
+    						<p class="rate">
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star-o"></i>
+    							<span>8 Rating</span>
+    						</p>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span>
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(common/images/restaurant-3.jpg);">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-link"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<h3><a href="#">Luxury Restaurant</a></h3>
+    						<p class="rate">
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star-o"></i>
+    							<span>8 Rating</span>
+    						</p>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span>
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="destination d-md-flex flex-column-reverse">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(common/images/restaurant-4.jpg);">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-link"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<h3><a href="#">Luxury Restaurant</a></h3>
+    						<p class="rate">
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star"></i>
+    							<i class="icon-star-o"></i>
+    							<span>8 Rating</span>
+    						</p>
+    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> San Franciso, CA</span>
+    							<span class="ml-auto"><a href="#">Book Now</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
     		</div>
     	</div>
     </section>
